@@ -141,9 +141,10 @@ If you only read one file in this kit besides the templates, read that one.
 ## Sources
 
 This starter kit is based on:
-- [Anthropic — "Claude Code Best Practices"](https://www.anthropic.com/engineering/claude-code-best-practices) — Official guidance, include/exclude table
+- [Anthropic — "Claude Code Best Practices"](https://code.claude.com/docs/en/best-practices) — Official guidance, include/exclude table
 - [Anthropic — "Effective Context Engineering"](https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents) — Context rot, attention budget, just-in-time context
-- [Boris Cherny's team tips](https://x.com/bcherny/status/2017742741636321619) — 10 tips from the Claude Code creator and team
+- [Boris Cherny's team tips](https://x.com/bcherny/status/2017742741636321619) — 10 tips from the Claude Code team (Jan 31, 2026)
+- [Boris Cherny's personal setup](https://x.com/bcherny/status/2007179832300581177) — How the creator uses Claude Code (Jan 2, 2026)
 - [HumanLayer — "Writing a Good CLAUDE.md"](https://www.humanlayer.dev/blog/writing-a-good-claude-md) — Instruction limits, progressive disclosure, leverage diagram
 - [Matt Pocock — "My AGENTS.md file"](https://www.aihero.dev/my-agents-md-file-for-building-plans-you-actually-read) — Plan loop rules
 - [josix/awesome-claude-md](https://github.com/josix/awesome-claude-md) — Curated collection of real CLAUDE.md files from open-source projects
@@ -152,4 +153,4 @@ This starter kit is based on:
 
 ---
 
-*Built by [Claude Code Camp](https://claudecodecamp.com) — a hands-on course teaching developers how to get 10x more from Claude Code.*
+*Built by [Claude Code Camp](https://claudecodecamp.com) — a weekly newsletter teaching developers how to get 10x more from Claude Code.*

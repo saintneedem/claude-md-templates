@@ -36,7 +36,7 @@
 | Command       | What it does                                    |
 |---------------|------------------------------------------------|
 | `/cost`       | Shows token usage for the current session       |
-| `/context`    | Shows what's loaded in the context window       |
+| `/context`    | Visualize current context usage as a colored grid |
 | `/clear`      | Clears the session (start fresh)                |
 | Shift+Tab x2  | Toggle Plan Mode (plan before acting)           |
 | fn x2 (macOS) | Voice dictation (3x faster than typing)         |

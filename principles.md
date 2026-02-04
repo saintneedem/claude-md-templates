@@ -32,7 +32,7 @@ This is from Anthropic's own best practices documentation:
 
 **The test:** Before adding a rule, ask: "Could Claude figure this out by reading my code?" If yes, don't add it.
 
-Source: [Anthropic — "Claude Code Best Practices"](https://www.anthropic.com/engineering/claude-code-best-practices)
+Source: [Anthropic — "Claude Code Best Practices"](https://code.claude.com/docs/en/best-practices)
 
 ---
 
@@ -46,7 +46,7 @@ Anthropic confirms that adding emphasis to critical rules improves adherence:
 
 Use these sparingly. If every rule is "IMPORTANT," none of them are.
 
-Source: [Anthropic — "Claude Code Best Practices"](https://www.anthropic.com/engineering/claude-code-best-practices)
+Source: [Anthropic — "Claude Code Best Practices"](https://code.claude.com/docs/en/best-practices)
 
 ---
 
@@ -111,9 +111,9 @@ Source: [HumanLayer — "Writing a Good CLAUDE.md"](https://www.humanlayer.dev/b
 
 ## The Self-Improvement Loop
 
-Boris Cherny's most actionable tip:
+From Boris Cherny's 10 tips from the Claude Code team (tip #3):
 
-> "After every correction, end with: 'Update your CLAUDE.md so you don't make that mistake again.' Claude is eerily good at writing rules for itself."
+> "Invest in your CLAUDE.md. After every correction, end with: 'Update your CLAUDE.md so you don't make that mistake again.' Claude is eerily good at writing rules for itself. Ruthlessly edit your CLAUDE.md over time. Keep iterating until Claude's mistake rate measurably drops."
 
 This turns CLAUDE.md from a static config into a **living document that gets smarter over time**. One engineer on the team tells Claude to maintain a notes directory for every task, updated after every PR, then points CLAUDE.md at it.
 
@@ -127,13 +127,17 @@ The cycle:
 
 Over weeks, your CLAUDE.md accumulates the team's institutional knowledge.
 
-Source: [Boris Cherny's team tips](https://x.com/bcherny/status/2017742741636321619)
+Source: [Boris Cherny's team tips, tip #3](https://x.com/bcherny/status/2017742747067945390) (from the [full thread](https://x.com/bcherny/status/2017742741636321619))
 
 ---
 
 ## The Verification Loop
 
 Boris's #1 tip for quality: **give Claude a way to verify its own work.**
+
+> "Probably the most important thing to get great results out of Claude Code — give Claude a way to verify its work. If Claude has that feedback loop, it will 2-3x the quality of the final result." — Boris Cherny ([source](https://x.com/bcherny/status/2007179832300581177))
+
+Anthropic's official best practices agree: "Include tests, screenshots, or expected outputs so Claude can check itself. This is the single highest-leverage thing you can do." ([source](https://code.claude.com/docs/en/best-practices))
 
 Put your verification commands in CLAUDE.md so Claude can run them:
 
@@ -148,7 +152,7 @@ After every change, run in this order:
 
 When Claude has a feedback loop, it produces **2-3x better results**. It will run tests, find issues, and fix them before you even review.
 
-Source: [Boris Cherny's setup](https://paddo.dev/blog/how-boris-uses-claude-code/)
+Source: [Boris Cherny's personal setup thread](https://x.com/bcherny/status/2007179832300581177), [Anthropic Best Practices](https://code.claude.com/docs/en/best-practices)
 
 ---
 
@@ -221,7 +225,7 @@ Source: [Matt Pocock — "My AGENTS.md file"](https://www.aihero.dev/my-agents-m
 | Source | Lines | Key Pattern |
 |--------|-------|-------------|
 | [HumanLayer](https://github.com/humanlayer/humanlayer/blob/main/CLAUDE.md) | 57 | ASCII diagrams, TODO priority system, progressive disclosure |
-| [Boris Cherny](https://github.com/0xquinto/bcherny-claude/blob/main/CLAUDE.md) | 83 | Self-improvement, plan mode, verification loop |
+| [Boris Cherny's team](https://x.com/bcherny/status/2007179832300581177) | ~83 | Self-improvement, plan mode, verification loop (shared team CLAUDE.md, private repo) |
 | [ChrisWiles](https://github.com/ChrisWiles/claude-code-showcase/blob/main/CLAUDE.md) | 80 | Quick Facts block, skill activation mapping |
 | [Cloudflare](https://github.com/cloudflare/templates/blob/main/CLAUDE.md) | 230 | Enterprise monorepo — too long for most projects |
 | [Anthropic's example](https://code.claude.com/docs/en/best-practices) | ~10 | Deliberately tiny — just code style + workflow |
@@ -272,7 +276,7 @@ Source: [HumanLayer's CLAUDE.md](https://github.com/humanlayer/humanlayer/blob/m
 
 | Anti-pattern | Why it fails | What to do instead |
 |---|---|---|
-| Using `/init` to auto-generate | Produces bloated, generic files | Write it yourself, iterate over time |
+| Relying on `/init` without editing | The generated file is generic and often too long ([HumanLayer](https://www.humanlayer.dev/blog/writing-a-good-claude-md)) | Use `/init` as a starting point ([Anthropic recommends it](https://code.claude.com/docs/en/best-practices)), then ruthlessly edit down |
 | Over 100 lines | Instructions get ignored uniformly | Keep root under 60, use module-specific files |
 | Personality instructions | "Be a senior engineer" wastes tokens | Claude already has strong system-level behavior |
 | @-mentioning docs | Embeds entire file every session | Pitch Claude on *when* to read: "For X, see docs/Y.md" |
@@ -287,10 +291,11 @@ Source: [HumanLayer's CLAUDE.md](https://github.com/humanlayer/humanlayer/blob/m
 ## Further Reading
 
 - [Anthropic — "Effective Context Engineering for AI Agents"](https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents) — Context rot, attention budget, just-in-time context
-- [Anthropic — "Claude Code Best Practices"](https://www.anthropic.com/engineering/claude-code-best-practices) — Official guidance
+- [Anthropic — "Claude Code Best Practices"](https://code.claude.com/docs/en/best-practices) — Official guidance
 - [HumanLayer — "Writing a Good CLAUDE.md"](https://www.humanlayer.dev/blog/writing-a-good-claude-md) — Instruction limits, progressive disclosure, leverage diagram
-- [Boris Cherny's team tips](https://x.com/bcherny/status/2017742741636321619) — 10 tips from the creator
-- [Boris Cherny's setup](https://paddo.dev/blog/how-boris-uses-claude-code/) — How he actually uses Claude Code
+- [Boris Cherny's team tips](https://x.com/bcherny/status/2017742741636321619) — 10 tips from the Claude Code team (Jan 31, 2026)
+- [Boris Cherny's personal setup](https://x.com/bcherny/status/2007179832300581177) — How the creator uses Claude Code (Jan 2, 2026)
+- [Boris Cherny's setup (summary)](https://paddo.dev/blog/how-boris-uses-claude-code/) — paddo.dev's analysis of Boris's workflow
 - [Shrivu Shankar — "How I Use Every Claude Code Feature"](https://blog.sshh.io/p/how-i-use-every-claude-code-feature) — Practitioner deep dive
 - [josix/awesome-claude-md](https://github.com/josix/awesome-claude-md) — Curated collection of real CLAUDE.md files from open-source projects
 - [hesreallyhim/awesome-claude-code](https://github.com/hesreallyhim/awesome-claude-code) — The main awesome list for Claude Code resources
